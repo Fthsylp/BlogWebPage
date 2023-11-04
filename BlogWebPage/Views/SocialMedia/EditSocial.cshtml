@@ -1,0 +1,23 @@
+﻿@model BlogWebPage.Models.Entity.SocialMedia
+
+@{
+    ViewBag.Title = "EditSocial";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2 class=" text-center">Update Social Media Page</h2>
+
+<div class="container">
+    <form method="post" class="mt-4">
+        <div class="mb-3">
+            @Html.Label("Sosyal Medya (Facebook/Instagram/Linkedin/GitHub/Twitter)")
+            @Html.TextBoxFor(x=>x.Name, new { @class = "form-control" })
+        </div>
+
+        <div class="mb-3">
+            @Html.Label("Sosyal Medya Link")
+            @Html.TextBoxFor(x => x.Link, new { @class = "form-control" })
+        </div>
+        <button type="submit" class="btn btn-dark">Submit</button>
+    </form>
+</div>

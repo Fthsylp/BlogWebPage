@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "CKEditor Test";
+    Layout = "";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CKEditor Example</title>
+
+    <!-- Include CKEditor script hosted locally -->
+    <script src="~/ckeditor/ckeditor.js"></script>
+</head>
+<body>
+
+    <!-- Your textarea -->
+    <textarea id="editor"></textarea>
+
+    <!-- Script to initialize CKEditor -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            CKEDITOR.replace('editor');
+        });
+
+    </script>
+
+</body>
+</html>

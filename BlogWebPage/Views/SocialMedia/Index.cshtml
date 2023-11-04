@@ -1,0 +1,69 @@
+﻿@using BlogWebPage.Models.Entity
+@model List<SocialMedia>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2 class="text-center">Sosyal Medya Admin Sayfası</h2>
+<br />
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th style="width: 10px">#</th>
+                                <th>Social Media</th>
+                                <th>Link</th>
+                                <th>Update</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.ID</td>
+                                    <td>@item.Name</td>
+                                    <td>@item.Link</td>
+                                    <td><a class="btn btn-warning btn-sm" href="/SocialMedia/EditSocial/@item.ID"><i class="fas fa-pencil-alt"></i> Edit</a></td>
+                                    <td><a class="btn btn-danger btn-sm" href="/SocialMedia/DeleteSocial/@item.ID"><i class="fas fa-trash"></i> Delete</a></td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                    <br />
+                    <button class="btn btn-dark" data-toggle="modal" data-target="#Modal1">Add New Social Media</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="Modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Yeni Sosyal Medya Ekleme Paneli</h2>
+            </div>
+            <form method="post" action="/SocialMedia/AddSocial">
+                <div class="modal-body">
+                    <label>Social Media (Facebook/Instagram/Linkedin/GitHub/Twitter)</label>
+                    <input type="text" class="form-control mb-2" name="Name" />
+                    @Html.ValidationMessage("Name", "", new { @class = "text-danger" })
+
+                    <label>Social Media Link</label>
+                    <input type="text" class="form-control mb-2" name="Link" />
+                    @Html.ValidationMessage("Link", "", new { @class = "text-danger" })
+
+                    <button class="btn btn-dark">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

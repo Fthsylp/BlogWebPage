@@ -1,0 +1,13 @@
+﻿@using BlogWebPage.Models.Entity
+@model List<SocialMedia>
+
+
+
+<div class="social-icons">
+    <ul class="list-inline footer-socials">
+        @foreach (var item in Model)
+        {
+            <li class="list-inline-item"><a href="@item.Link"><i class="@item.Sign"></i>@item.Name</a></li>
+        }
+    </ul>
+</div>

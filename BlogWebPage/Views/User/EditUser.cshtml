@@ -1,0 +1,27 @@
+﻿@model BlogWebPage.Models.Entity.Login
+
+
+@{
+    ViewBag.Title = "Edit User";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+    <br />
+    <h4 class="text-center">Update Education Page</h4>
+
+    <form method="post" class="mt-4">
+        <div class="mb-3">
+            @Html.Label("Username")
+            @Html.TextBoxFor(x => x.Username, new { @class = "form-control" })
+        </div>
+
+        <div class="mb-3">
+            @Html.Label("Password")
+            @Html.TextBoxFor(x=> x.Password, new { @class = "form-control"})
+        </div>
+
+        <button type="submit" class="btn btn-dark">Submit</button>
+    </form>
+</div>
+

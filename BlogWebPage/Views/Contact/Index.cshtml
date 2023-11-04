@@ -1,0 +1,52 @@
+﻿@using BlogWebPage.Models.Entity
+@model List<Contact>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link rel="stylesheet" href="/AdminLTE-3.0.4/plugins/fontawesome-free/css/all.min.css">
+<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+<link rel="stylesheet" href="/AdminLTE-3.0.4/dist/css/adminlte.min.css">
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+<br />
+<h2 class="text-center">Gelen Mesajlar Sayfası</h2>
+<br />
+
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-body">
+            <div class="tab-pane" id="timeline">
+                <div class="timeline timeline-inverse">
+                    @foreach (var item in Model)
+                    {
+                        <div class="time-label">
+                            <span class="bg-warning">
+                                @(((DateTime)item.Date).ToString("dd-MMM-yyyy"))
+                            </span>
+                        </div>
+                        <div>
+                            <i class="fas fa-comments bg-warning"></i>
+                            <div class="timeline-item">
+                                <h3 class="timeline-header"><a href="#">@item.NameSurname</a> sent you a message! || Subject : @item.Subject</h3>
+                                <div class="timeline-body">
+                                    @item.Comment
+                                </div>
+                                <div class="timeline-footer">
+                                    <a href="https://mail.google.com/mail/" class="btn btn-warning btn-flat btn-sm">@item.Email</a>
+                                    <a href="/Contact/DeleteMsg/@item.ID" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Sil</a>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
+<script src="/AdminLTE-3.0.4/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/AdminLTE-3.0.4/dist/js/adminlte.min.js"></script>
+<script src="/AdminLTE-3.0.4/dist/js/demo.js"></script>

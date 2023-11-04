@@ -1,0 +1,48 @@
+﻿@using BlogWebPage.Models.Entity
+@model List<About>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2 class="text-center">Hakkımda Admin Sayfası</h2>
+<br />
+@using (Html.BeginForm("Index", "About", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    foreach (var item in Model)
+    {
+        <div class="form-group">
+            <input type="hidden" name="ID" value="@item.ID" />
+
+            <label for="Description1">Ben Kimim? (Kısa)</label>
+            <textarea id="Description1" name="Description1" class="form-control mb-2" rows="3">@item.Description1</textarea>
+
+            <label for="Description2">Vizyon (Kısa)</label>
+            <textarea id="Description2" name="Description2" class="form-control mb-2" rows="3">@item.Description2</textarea>
+
+            <label for="Description">Genel Ve Uzun Açıklama</label>
+            <textarea id="Description" name="Description" class="form-control mb-2" rows="12">@item.Description</textarea>
+
+            <div class="form-group mb-2">
+                <label for="Image">Image</label>
+                <div class="custom-file">
+                    <input type="file" id="Image" name="Image" onchange="displayFileName()">
+                    <label class="custom-file-label" for="Image" id="fileLabel">@item.Image</label>
+                </div>
+            </div>
+        </div>
+    }
+
+    <button class="btn btn-dark">Submit</button>
+}
+
+<script>
+    function displayFileName() {
+        const input = document.getElementById('Image');
+        const label = document.getElementById('fileLabel');
+        const fileName = input.files[0].name;
+        label.innerText = fileName;
+    }
+</script>

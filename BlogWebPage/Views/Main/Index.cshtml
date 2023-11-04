@@ -1,0 +1,56 @@
+﻿@using BlogWebPage.Models.Entity
+@using PagedList
+@using PagedList.Mvc
+@model IPagedList<Posts>
+@{
+    ViewBag.Title = "Index page";
+}
+
+<section class="section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="row">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <article class="post-grid mb-5 ">
+                                <a class="post-thumb mb-4 d-block" href="@Url.Action("DetailedPost",new {id =  @item.ID})">
+                                    <img src="@item.Image" alt="" class="img-fluid w-100" style="height:480px;">
+                                </a>
+
+                                <div class="post-content-grid">
+                                    <div class="label-date">
+                                        <span class="day">@item.Date.Value.ToString("dd")</span>
+                                        <span class="month text-uppercase">@item.Date.Value.ToString("MMM")</span>
+                                    </div>
+                                    <span class="cat-name text-color font-extra font-sm text-uppercase letter-spacing">@item.Subtitle</span>
+                                    <h3 class="post-title mt-1">
+                                        <a href="@Url.Action("DetailedPost",new {id =  @item.ID})">
+                                            @item.Title
+                                        </a>
+                                    </h3>
+                                    <p>
+                                        @item.Description
+                                    </p>
+                                </div>
+                            </article>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="m-auto mt-4">
+                <nav aria-label="Page navigation">
+                    <ul class="pagination justify-content-center">
+                        <li>
+                            @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }), new PagedListRenderOptions { PageCountAndCurrentLocationFormat = "Page {0} of {1}" })
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+

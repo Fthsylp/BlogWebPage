@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Revolve - Personal Magazine blog Template</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="/revolve-1.0.0/images/favicon.ico" type="image/x-icon">
+
+    <!-- THEME CSS
+    ================================================== -->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="/revolve-1.0.0/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- Themify -->
+    <link rel="stylesheet" href="/revolve-1.0.0/plugins/themify/css/themify-icons.css">
+    <link rel="stylesheet" href="/revolve-1.0.0/plugins/slick-carousel/slick-theme.css">
+    <link rel="stylesheet" href="/revolve-1.0.0/plugins/slick-carousel/slick.css">
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" href="/revolve-1.0.0/plugins/owl-carousel/owl.carousel.min.css">
+    <link rel="stylesheet" href="/revolve-1.0.0/plugins/owl-carousel/owl.theme.default.min.css">
+    <link rel="stylesheet" href="/revolve-1.0.0/plugins/magnific-popup/magnific-popup.css">
+    <!-- manin stylesheet -->
+    <link rel="stylesheet" href="/revolve-1.0.0/css/style.css">
+</head>
+
+<body>
+
+    <header class="header-top bg-dark py-4">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navigation menu-white">
+                <a class="navbar-brand" href="#">
+                    <img src="/revolve-1.0.0/images/logo-w.png" alt="" class="img-fluid">
+                </a>
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse"
+                        aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="ti-menu  text-white"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbar-collapse">
+                    <ul class="menu navbar-nav ml-auto">
+                        <li class="nav-item"><a href="/Main/Index" class="nav-link">Anasayfa</a></li>
+                        <li class="nav-item"><a href="/Main/ImageIndex" class="nav-link">Görsel Çalışmalarım</a></li>
+                        <li class="nav-item"><a href="/Main/About" class="nav-link">Hakkımda</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    @RenderBody()
+
+    <!--footer start-->
+    <footer class="footer-section bg-grey">
+        <!-- Removed the entire instagram-photo-section div -->
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="mb-4">
+                        <h2 class="footer-logo">Tarihin İzinde...</h2>
+                    </div>
+                        @Html.Action("SocialMedia")
+
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--footer end-->
+    <!-- THEME JAVASCRIPT FILES
+    ================================================== -->
+    <!-- initialize jQuery Library -->
+    <script src="/revolve-1.0.0/plugins/jquery/jquery.js"></script>
+    <!-- Bootstrap jQuery -->
+    <script src="/revolve-1.0.0/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/revolve-1.0.0/plugins/bootstrap/js/popper.min.js"></script>
+    <!-- Owl caeousel -->
+    <script src="/revolve-1.0.0/plugins/owl-carousel/owl.carousel.min.js"></script>
+    <script src="/revolve-1.0.0/plugins/slick-carousel/slick.min.js"></script>
+    <script src="/revolve-1.0.0/plugins/magnific-popup/magnific-popup.js"></script>
+    <!-- Instagram Feed Js -->
+    <script src="/revolve-1.0.0/plugins/instafeed-js/instafeed.min.js"></script>
+    <!-- Google Map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCC72vZw-6tGqFyRhhg5CkF2fqfILn2Tsw"></script>
+    <script src="/revolve-1.0.0/plugins/google-map/gmap.js"></script>
+    <!-- main js -->
+    <script src="/revolve-1.0.0/js/custom.js"></script>
+
+
+</body>
+
+</html>

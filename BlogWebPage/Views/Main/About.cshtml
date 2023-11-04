@@ -1,0 +1,76 @@
+﻿@using BlogWebPage.Models.Entity
+@model List<About>
+@{
+    ViewBag.Title = "About";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .custom-image {
+        height: 800px; /* Set the desired fixed height */
+        /* You can adjust this value based on your design requirements */
+        object-fit: cover; /* Ensures the image covers the specified dimensions */
+    }
+</style>
+
+<div class="breadcrumb-wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="text-center">
+                    <h2 class="lg-title">Ben Kimim?</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<section class="pt-5 padding-bottom">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                <div class="row">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-lg-12">
+                            <img src="@Url.Content(item.Image)" alt="" class="img-fluid w-100 custom-image">
+                        </div>
+                    }
+                </div>
+
+                <div class="row justify-content-center mt-5">
+                    <div class="col-lg-12">
+                        <div class="row">
+                            @foreach (var item in Model)
+                            {
+                                <div class="col-lg-6">
+                                    <h5 class="text-uppercase letter-spacing mb-4">Ben Kimim?</h5>
+                                    <p>
+                                        @item.Description1
+                                    </p>
+
+                                </div>
+                                <div class="col-lg-6">
+                                    <h5 class="text-uppercase letter-spacing mb-4">Benim Vizyonum</h5>
+                                    <p>
+                                        @item.Description2
+                                    </p>
+                                </div>
+                            }
+                        </div>
+
+                        @foreach (var item in Model)
+                        {
+
+                            <h3 class="mb-2 mt-5">@item.Title</h3>
+                            <p class="">
+                                @item.Description
+                            </p>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

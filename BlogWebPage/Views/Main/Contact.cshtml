@@ -1,0 +1,36 @@
+﻿@{
+    Layout = null;
+}
+
+@if (ViewBag.SuccessMessage != null)
+{
+    <div class="alert alert-success">
+        @ViewBag.SuccessMessage
+    </div>
+}
+
+<form method="post" class="comment-form mb-5 gray-bg p-5" id="comment-form">
+    <h3 class="mb-4 text-center">Leave a comment</h3>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+                <input class="form-control" type="text" name="Subject" id="subject" placeholder="Konu:">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <input class="form-control" type="text" name="NameSurname" id="nameSurname" placeholder="İsim Soyisim:">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <input class="form-control" type="text" name="Email" id="email" placeholder="Email adresi:">
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <textarea class="form-control mb-3" name="Comment" id="comment" cols="30" rows="5"
+                      placeholder="Yorum/Mesaj"></textarea>
+        </div>
+    </div>
+    <input class="btn btn-primary" type="submit" name="submit-contact" id="submit_contact" value="Submit Message">
+</form>

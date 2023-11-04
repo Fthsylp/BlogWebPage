@@ -1,0 +1,67 @@
+﻿@model BlogWebPage.Models.Entity.Images
+
+@{
+    ViewBag.Title = "AddPost";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<style>
+    #imagePreview img {
+        width: 150px; /* Dilediğin genişlik değerini buraya ekleyebilirsin */
+        height: 150px; /* Dilediğin yükseklik değerini buraya ekleyebilirsin */
+        object-fit: cover;
+    }
+</style>
+
+
+<br />
+<h2 class="text-center">Post Düzenleme Sayfası</h2>
+<br />
+
+@using (Html.BeginForm("EditPost", "ImagePage", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div class="form-group ">
+        <label for="Title">Başlık</label>
+        <input type="text" id="Title" name="Title" class="form-control mb-2" value="@Model.Title" required />
+        <div class="form-group">
+            <label for="Image">Kapak Resmi</label>
+            <div class="custom-file">
+                <input type="file" class="custom-file-input" id="CoverImage" name="CoverImage" onchange="displayImagePreview(), displayFileName()">
+                <label class="custom-file-label" for="CoverImage" id="fileLabel">@Model.CoverImage</label>
+            </div>
+            <small class="form-text text-muted">En büyük dosya boyutu: 5MB</small>
+            <div id="imagePreview" class="mt-2"></div>
+        </div>
+    </div>
+    <button class="btn btn-dark mt-2">Gönder</button>
+
+}
+
+<script>
+    function displayImagePreview() {
+        const input = document.getElementById('CoverImage');
+        const preview = document.getElementById('imagePreview');
+
+        while (preview.firstChild) {
+            preview.removeChild(preview.firstChild);
+        }
+
+        if (input.files && input.files[0]) {
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                const img = document.createElement('img');
+                img.src = e.target.result;
+                img.className = 'img-thumbnail';
+                preview.appendChild(img);
+            };
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+    function displayFileName() {
+        const input = document.getElementById('CoverImage');
+        const label = document.getElementById('fileLabel');
+        const fileName = input.files[0].name;
+        label.innerText = fileName;
+    }
+</script>

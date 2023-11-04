@@ -1,0 +1,62 @@
+﻿@using BlogWebPage.Models.Entity
+@model List<Posts>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    int number = 1;
+}
+
+<br />
+<h2 class="text-center">Yeni Post Ekleme Admin Kontrol Sayfası</h2>
+<br />
+
+@if (Model.Count == 0)
+{
+    <p>No experiences to display.</p>
+}
+else
+{
+    <div class="text-center">
+        <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Başlık</th>
+                    <th>Gezi Türü</th>
+                    <th>Tarih</th>
+                    <th>Açıklama</th>
+                    <th>Durum</th>
+                    <th>Pasif yap</th>
+                    <th>Düzenle</th>
+                    <th>Sil</th>
+                </tr>
+            </thead>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@number</td>
+                    <td>@item.Title</td>
+                    <td>@item.Subtitle</td>
+                    <td>@item.Date.Value.ToString("dd MMM yyyy")</td>
+                    <td>@item.Description</td>
+                    @if (item.Status == true)
+                    {
+                        <td>Aktif</td>
+                    }
+                    else
+                    {
+                        <td>Pasif</td>
+                    }
+                    <td><a href="/AdminMain/PassivePost/@item.ID" class="btn btn-outline-danger btn-sm"><i class="fas fa-book-reader"></i> Pasif Yap || Aktif Yap</a></td>
+                    <td><a href="/AdminMain/EditPost/@item.ID" class="btn btn-info btn-sm"><i class="fas fa-pencil-alt"></i> Düzenle</a></td>
+                    <td><a href="/AdminMain/DeletePost/@item.ID" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Sil</a></td>
+                </tr>
+                number++;
+            }
+        </table>
+    </div>
+}
+
+<a href="/AdminMain/Addpost/" class="btn btn-dark">Yeni Post</a>
