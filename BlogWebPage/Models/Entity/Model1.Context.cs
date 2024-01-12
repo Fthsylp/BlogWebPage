@@ -29,7 +29,7 @@ namespace BlogWebPage.Models.Entity
         public virtual DbSet<Login> Login { get; set; }
         public virtual DbSet<About> About { get; set; }
         public virtual DbSet<Posts> Posts { get; set; }
-        public virtual DbSet<Images> Images { get; set; }
         public virtual DbSet<Contact> Contact { get; set; }
+        public virtual DbSet<Images> Images { get; set; }
     }
 }

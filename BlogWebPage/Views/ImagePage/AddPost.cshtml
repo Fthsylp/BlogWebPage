@@ -32,84 +32,6 @@
             <small class="form-text text-muted">En büyük dosya boyutu: 5MB</small>
             <div id="imagePreview" class="mt-2"></div>
         </div>
-
-        <div class="form-group">
-            <label for="Image">1. Resim</label>
-            <div class="custom-file">
-                <input type="file" class="custom-file-input" id="ContentImage1" name="ContentImage1" onchange="displayImagePreview(), displayFileName()">
-                <label class="custom-file-label" for="ContentImage1" id="fileLabel"></label>
-            </div>
-            <small class="form-text text-muted">En büyük dosya boyutu: 5MB</small>
-            <div id="imagePreview2" class="mt-2"></div>
-        </div>
-
-        <label for="Description1">1.Fotoğraf Açıklama</label>
-        <input type="text" id="Description1" name="Description1" class="form-control mb-2" />
-
-        <div class="form-group">
-            <label for="Image">2. Resim</label>
-            <div class="custom-file">
-                <input type="file" class="custom-file-input" id="ContentImage2" name="ContentImage2" onchange="displayImagePreview(), displayFileName()">
-                <label class="custom-file-label" for="ContentImage2" id="fileLabel"></label>
-            </div>
-            <small class="form-text text-muted">En büyük dosya boyutu: 5MB</small>
-            <div id="imagePreview" class="mt-2"></div>
-        </div>
-
-        <label for="Title">2.Fotoğraf Açıklama</label>
-        <input type="text" id="Description2" name="Description2" class="form-control mb-2" />
-
-        <div class="form-group">
-            <label for="Image">3. Resim</label>
-            <div class="custom-file">
-                <input type="file" class="custom-file-input" id="ContentImage3" name="ContentImage3" onchange="displayImagePreview(), displayFileName()">
-                <label class="custom-file-label" for="ContentImage3" id="fileLabel"></label>
-            </div>
-            <small class="form-text text-muted">En büyük dosya boyutu: 5MB</small>
-            <div id="imagePreview" class="mt-2"></div>
-        </div>
-
-        <label for="Title">3.Fotoğraf Açıklama</label>
-        <input type="text" id="Description3" name="Description3" class="form-control mb-2" />
-
-        <div class="form-group">
-            <label for="Image">4. Resim</label>
-            <div class="custom-file">
-                <input type="file" class="custom-file-input" id="ContentImage4" name="ContentImage4" onchange="displayImagePreview(), displayFileName()">
-                <label class="custom-file-label" for="ContentImage4" id="fileLabel"></label>
-            </div>
-            <small class="form-text text-muted">En büyük dosya boyutu: 5MB</small>
-            <div id="imagePreview" class="mt-2"></div>
-        </div>
-
-        <label for="Title">4.Fotoğraf Açıklama</label>
-        <input type="text" id="Description4" name="Description4" class="form-control mb-2" />
-
-        <div class="form-group">
-            <label for="Image">5. Resim</label>
-            <div class="custom-file">
-                <input type="file" class="custom-file-input" id="ContentImage5" name="ContentImage5" onchange="displayImagePreview(), displayFileName()">
-                <label class="custom-file-label" for="ContentImage5" id="fileLabel"></label>
-            </div>
-            <small class="form-text text-muted">En büyük dosya boyutu: 5MB</small>
-            <div id="imagePreview" class="mt-2"></div>
-        </div>
-
-        <label for="Title">5.Fotoğraf Açıklama</label>
-        <input type="text" id="Description5" name="Description5" class="form-control mb-2" />
-
-        <div class="form-group">
-            <label for="Image">6. Resim</label>
-            <div class="custom-file">
-                <input type="file" class="custom-file-input" id="ContentImage6" name="ContentImage6" onchange="displayImagePreview(), displayFileName()">
-                <label class="custom-file-label" for="ContentImage6" id="fileLabel"></label>
-            </div>
-            <small class="form-text text-muted">En büyük dosya boyutu: 5MB</small>
-            <div id="imagePreview" class="mt-2"></div>
-        </div>
-
-        <label for="Title">6.Fotoğraf Açıklama</label>
-        <input type="text" id="Description6" name="Description6" class="form-control mb-2" />
     </div>
     <button class="btn btn-dark mt-2">Gönder</button>
 }
@@ -138,36 +60,6 @@
 
     function displayFileName() {
         const input = document.getElementById('CoverImage');
-        const label = document.getElementById('fileLabel');
-        const fileName = input.files[0].name;
-        label.innerText = fileName;
-    }
-</script>
-
-<script>
-    function displayImagePreview() {
-        const input = document.getElementById('ContentImage1');
-        const preview = document.getElementById('imagePreview2');
-
-        while (preview.firstChild) {
-            preview.removeChild(preview.firstChild);
-        }
-
-        if (input.files && input.files[0]) {
-            const reader = new FileReader();
-
-            reader.onload = function (e) {
-                const img = document.createElement('img');
-                img.src = e.target.result;
-                img.className = 'img-thumbnail';
-                preview.appendChild(img);
-            };
-            reader.readAsDataURL(input.files[0]);
-        }
-    }
-
-    function displayFileName() {
-        const input = document.getElementById('ContentImage1');
         const label = document.getElementById('fileLabel');
         const fileName = input.files[0].name;
         label.innerText = fileName;

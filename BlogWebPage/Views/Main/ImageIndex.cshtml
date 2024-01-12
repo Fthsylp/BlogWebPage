@@ -15,12 +15,12 @@
                     {
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <article class="post-grid mb-5 ">
-                                <a class="post-thumb mb-4 d-block" href="@Url.Action("DetailedImagePost",new {id =  @item.ID})">
+                                <a class="post-thumb mb-4 d-block">
                                     <img src="@item.CoverImage" alt="" class="img-fluid w-100" style="height:480px;">
                                 </a>
                                 <div class="post-content-grid">
                                     <h3 class="post-title mt-1 text-center">
-                                        <a href=@Url.Action("DetailedImagePost",new {id =  @item.ID})>
+                                        <a>
                                             @item.Title
                                         </a>
                                     </h3>

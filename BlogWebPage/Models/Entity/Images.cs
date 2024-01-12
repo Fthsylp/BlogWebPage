@@ -18,17 +18,5 @@ namespace BlogWebPage.Models.Entity
         public string CoverImage { get; set; }
         public Nullable<System.DateTime> Date { get; set; }
         public string Title { get; set; }
-        public string ContentImage1 { get; set; }
-        public string Description1 { get; set; }
-        public string ContentImage2 { get; set; }
-        public string Description2 { get; set; }
-        public string ContentImage3 { get; set; }
-        public string Description3 { get; set; }
-        public string ContentImage4 { get; set; }
-        public string Description4 { get; set; }
-        public string ContentImage5 { get; set; }
-        public string Description5 { get; set; }
-        public string ContentImage6 { get; set; }
-        public string Description6 { get; set; }
     }
 }

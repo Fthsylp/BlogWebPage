@@ -535,9 +535,7 @@
     <Content Include="Content\PagedList.css" />
     <Content Include="dashmin-1.0.0\css\bootstrap.min.css" />
     <Content Include="dashmin-1.0.0\css\style.css" />
-    <Content Include="dashmin-1.0.0\img\testimonial-1.jpg" />
-    <Content Include="dashmin-1.0.0\img\testimonial-2.jpg" />
-    <Content Include="dashmin-1.0.0\img\user.jpg" />
+    <Content Include="dashmin-1.0.0\img\MV5BMGJiZGZmNjAtMTM4MS00ZmZlLThlZjgtZmYyODZmNTlmNzI3XkEyXkFqcGdeQWRpZWdtb25n._V1_.jpg" />
     <Content Include="dashmin-1.0.0\js\main.js" />
     <Content Include="dashmin-1.0.0\lib\chart\chart.min.js" />
     <Content Include="dashmin-1.0.0\lib\easing\easing.js" />
@@ -558,7 +556,6 @@
     <Content Include="dashmin-1.0.0\lib\tempusdominus\js\moment.min.js" />
     <Content Include="dashmin-1.0.0\lib\tempusdominus\js\tempusdominus-bootstrap-4.js" />
     <Content Include="dashmin-1.0.0\lib\tempusdominus\js\tempusdominus-bootstrap-4.min.js" />
-    <Content Include="dashmin-1.0.0\lib\waypoints\waypoints.min.js" />
     <Content Include="dashmin-1.0.0\LICENSE.txt" />
     <Content Include="dashmin-1.0.0\READ-ME.txt" />
     <Content Include="favicon.ico" />
@@ -715,7 +712,6 @@
     <Content Include="revolve-1.0.0\plugins\themify\fonts\themify.ttf" />
     <Content Include="revolve-1.0.0\plugins\themify\fonts\themify.woff" />
     <Content Include="dashmin-1.0.0\lib\owlcarousel\LICENSE" />
-    <Content Include="dashmin-1.0.0\lib\waypoints\links.php" />
     <Content Include="dashmin-1.0.0\scss\bootstrap.scss" />
     <Content Include="dashmin-1.0.0\scss\bootstrap\scss\bootstrap-grid.scss" />
     <Content Include="dashmin-1.0.0\scss\bootstrap\scss\bootstrap-reboot.scss" />
@@ -956,7 +952,6 @@
     <Content Include="Views\ImagePage\Index.cshtml" />
     <Content Include="Views\ImagePage\AddPost.cshtml" />
     <Content Include="Views\ImagePage\EditPost.cshtml" />
-    <Content Include="Views\Main\DetailedImagePost.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -35,18 +35,6 @@
           <Property Name="CoverImage" Type="varchar" MaxLength="100" />
           <Property Name="Date" Type="datetime" />
           <Property Name="Title" Type="varchar" MaxLength="50" />
-          <Property Name="ContentImage1" Type="varchar" MaxLength="100" />
-          <Property Name="Description1" Type="varchar" MaxLength="100" />
-          <Property Name="ContentImage2" Type="varchar" MaxLength="100" />
-          <Property Name="Description2" Type="varchar" MaxLength="100" />
-          <Property Name="ContentImage3" Type="varchar" MaxLength="100" />
-          <Property Name="Description3" Type="varchar" MaxLength="100" />
-          <Property Name="ContentImage4" Type="varchar" MaxLength="100" />
-          <Property Name="Description4" Type="varchar" MaxLength="100" />
-          <Property Name="ContentImage5" Type="varchar" MaxLength="100" />
-          <Property Name="Description5" Type="varchar" MaxLength="100" />
-          <Property Name="ContentImage6" Type="varchar" MaxLength="100" />
-          <Property Name="Description6" Type="varchar" MaxLength="100" />
         </EntityType>
         <EntityType Name="Login">
           <Key>
@@ -95,8 +83,8 @@
           <EntitySet Name="Login" EntityType="DbBlogModel.Login" />
           <EntitySet Name="About" EntityType="DbBlogModel.About" />
           <EntitySet Name="Posts" EntityType="DbBlogModel.Posts" />
-          <EntitySet Name="Images" EntityType="DbBlogModel.Images" />
           <EntitySet Name="Contact" EntityType="DbBlogModel.Contact" />
+          <EntitySet Name="Images" EntityType="DbBlogModel.Images" />
         </EntityContainer>
         <EntityType Name="SocialMedia">
           <Key>
@@ -139,27 +127,6 @@
           <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="MainText" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="Images">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CoverImage" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Date" Type="DateTime" Precision="3" />
-          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="ContentImage1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Description1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="ContentImage2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Description2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="ContentImage3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Description3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="ContentImage4" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Description4" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="ContentImage5" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Description5" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="ContentImage6" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="Description6" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-        </EntityType>
         <EntityType Name="Contact">
           <Key>
             <PropertyRef Name="ID" />
@@ -170,6 +137,15 @@
           <Property Name="NameSurname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Date" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Images">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CoverImage" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -222,28 +198,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Images">
-            <EntityTypeMapping TypeName="DbBlogModel.Images">
-              <MappingFragment StoreEntitySet="Images">
-                <ScalarProperty Name="Description6" ColumnName="Description6" />
-                <ScalarProperty Name="ContentImage6" ColumnName="ContentImage6" />
-                <ScalarProperty Name="Description5" ColumnName="Description5" />
-                <ScalarProperty Name="ContentImage5" ColumnName="ContentImage5" />
-                <ScalarProperty Name="Description4" ColumnName="Description4" />
-                <ScalarProperty Name="ContentImage4" ColumnName="ContentImage4" />
-                <ScalarProperty Name="Description3" ColumnName="Description3" />
-                <ScalarProperty Name="ContentImage3" ColumnName="ContentImage3" />
-                <ScalarProperty Name="Description2" ColumnName="Description2" />
-                <ScalarProperty Name="ContentImage2" ColumnName="ContentImage2" />
-                <ScalarProperty Name="Description1" ColumnName="Description1" />
-                <ScalarProperty Name="ContentImage1" ColumnName="ContentImage1" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
-                <ScalarProperty Name="CoverImage" ColumnName="CoverImage" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="Contact">
             <EntityTypeMapping TypeName="DbBlogModel.Contact">
               <MappingFragment StoreEntitySet="Contact">
@@ -252,6 +206,16 @@
                 <ScalarProperty Name="NameSurname" ColumnName="NameSurname" />
                 <ScalarProperty Name="Comment" ColumnName="Comment" />
                 <ScalarProperty Name="Subject" ColumnName="Subject" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Images">
+            <EntityTypeMapping TypeName="DbBlogModel.Images">
+              <MappingFragment StoreEntitySet="Images">
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="CoverImage" ColumnName="CoverImage" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
